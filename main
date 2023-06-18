@@ -1,0 +1,67 @@
+
+ 
+sudo -i
+hostnamectl set-hostname master
+bash
+apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+apt install ansible
+y
+ansible --version
+ssh-keygen -t rsa
+3 enters
+cat /root/.ssh/id_rsa
+cat /root/.ssh/id_rsa.pub
+Go to client1
+sudo -i
+hostnamectl set-hostname client1
+bash
+cd .ssh/
+ls
+vi authorized_keys
+paste keys
+just press esc buttoun
+:wq!
+Go to client2
+sudo -i
+hostnamectl set-hostname client2
+bash
+cd .ssh/
+ls
+vi authorized_keys
+paste keys
+just press esc buttoun
+:wq!
+go to master (check you are under root)
+ssh root@vm-1
+yes
+exit
+ssh root@vm-2
+yes
+exit
+vi /etc/hosts
+ip address space master
+ip address space client 1
+ip address space client2
+:wq!
+click escape buttoun
+:wq!
+ssh client1
+exit
+ssh cllient2
+exit
+vi /etc/ansible/hosts
+see picture 1 for refernce
+click inset button
+ansible all --list-hosts
+cd /etc/ansible
+mkdir yamls
+cd yamls
+vi lamp.yaml
+vi index.php
+ansible-playbook lamp.yaml
+Now got to client1 and client 2 and run below both commands
+php -v
+systemctl status apache2
+http://172.190.168.100/index.php (vm1 ipaddress and vm2 ip address)
+ 
