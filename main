@@ -57,8 +57,10 @@ privateip address space client2
 click escape buttoun
 :wq!
 ssh client1
+yes
 exit
 ssh cllient2
+yes
 exit
 vi /etc/ansible/hosts
 see picture 1 for refernce
