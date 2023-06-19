@@ -49,9 +49,9 @@ ssh root@vm-2
 yes
 exit
 vi /etc/hosts
-ip address space master
-ip address space client 1
-ip address space client2
+privateip address space master
+privateip address space client 1
+privateip address space client2
 :wq!
 click escape buttoun
 :wq!
