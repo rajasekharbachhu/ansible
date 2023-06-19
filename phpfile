@@ -1,0 +1,10 @@
+<html>
+<head>
+<title>Ansible Application</title>
+</head>
+<body>
+<?php
+echo " Hello, This is my first Lamp execution L- Linux  A-apache  M- mysql P-PHP"
+?>
+</body>
+</html>
