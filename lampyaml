@@ -1,0 +1,31 @@
+---
+- hosts: all
+  remote_user: root
+  become: yes
+  tasks:
+    - name: Installing Apache, MySQL and PHP
+      apt:
+        name:
+          - apache2
+          - mysql-server
+          - mysql-client
+          - python3-pymysql
+          - php
+          - php-mysql
+        state: present
+    - name: Enabling and Starting the service http
+      service:
+        name: apache2.service
+        enabled: yes
+        state: started
+    - name: Enabling and Starting the service MySQL
+      service:
+        name: mysql
+        enabled: yes
+        state: started
+    - name: Copying the php file
+      copy:
+        src: /etc/ansible/yamls/index.php
+        dest: /var/www/html/index.php
+        force: yes
+...
