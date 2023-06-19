@@ -49,6 +49,7 @@ ssh root@vm-2
 yes
 exit
 vi /etc/hosts
+press insert buttoun
 privateip address space master
 privateip address space client 1
 privateip address space client2
